@@ -5,7 +5,7 @@
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
 
-    <!-- Requerido para crear NuGet -->
+    <IsPackable>true</IsPackable>
     <PackageId>EcommerceApp.Api</PackageId>
     <Version>1.0.0</Version>
     <Authors>mayrafc</Authors>
