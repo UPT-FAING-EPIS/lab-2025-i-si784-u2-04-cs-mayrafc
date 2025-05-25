@@ -4,13 +4,20 @@
     <TargetFramework>net8.0</TargetFramework>
     <Nullable>enable</Nullable>
     <ImplicitUsings>enable</ImplicitUsings>
-    
+
+    <!-- Requerido para crear NuGet -->
+    <PackageId>EcommerceApp.Api</PackageId>
+    <Version>1.0.0</Version>
+    <Authors>mayrafc</Authors>
+    <Company>mayrafc</Company>
+    <Description>API para el ecommerce desarrollado en clase</Description>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="8.0.4" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
-
   </ItemGroup>
 
 </Project>
