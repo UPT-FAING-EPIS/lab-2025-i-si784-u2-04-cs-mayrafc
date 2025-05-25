@@ -34,7 +34,7 @@ jobs:
 
       - name: Empaquetar NuGet
         run: |
-          dotnet pack ./EcommerceApp/EcommerceApp.csproj \
+          dotnet pack ./EcommerceApp/EcommerceApp.Api/EcommerceApp.Api.csproj \
             --configuration Release \
             -p:PackageVersion=${{ env.VERSION }} \
             -o ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
