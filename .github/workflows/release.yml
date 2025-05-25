@@ -15,7 +15,6 @@ jobs:
 
     env:
       PACKAGE_OUTPUT_DIRECTORY: ./nupkg
-      # Aquí defines tu código de matrícula (ejemplo: 202312345)
       MATRICULA_VERSION: "202312345"
 
     steps:
@@ -27,8 +26,6 @@ jobs:
         with:
           dotnet-version: 8.0.x
 
-      # Opcional: Extraer versión desde csproj, o usar matrícula como versión fija
-      # Aquí vamos a usar la matrícula directamente:
       - name: Establecer versión del paquete
         run: echo "VERSION=${{ env.MATRICULA_VERSION }}" >> $GITHUB_ENV
 
@@ -42,7 +39,7 @@ jobs:
             -p:PackageVersion=${{ env.VERSION }} \
             -o ${{ env.PACKAGE_OUTPUT_DIRECTORY }}
 
-            - name: Configurar NuGet para GitHub Packages
+      - name: Configurar NuGet para GitHub Packages
         run: |
           dotnet nuget remove source github || echo "No existe fuente github"
           dotnet nuget add source "https://nuget.pkg.github.com/mayrafc/index.json" \
@@ -57,7 +54,6 @@ jobs:
             --api-key ${{ secrets.NUGET_TOKEN }} \
             --source github \
             --skip-duplicate
-
 
       - name: Crear Release en GitHub
         uses: softprops/action-gh-release@v1
